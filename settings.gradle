@@ -1,4 +1,5 @@
 rootProject.name = 'tel-monopoly-backend'
 
 include 'tel-monopoly-backend-service'
+include 'tel-monopoly-component-tests'
 
