@@ -1,4 +1,6 @@
-package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
+package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields;
+
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction;
 
 import java.util.List;
 
@@ -14,12 +16,12 @@ public interface MonopolyField {
     /**
      * Returns the field next to this field on the board.
      */
-    MonopolyField getNextField();
+    MonopolyField nextField();
 
     /**
      * Returns the field previous to this field on the board.
      */
-    MonopolyField getPreviousField();
+    MonopolyField previousField();
 
     /**
      * Actions to be performed when a player ends its turn on this field.
