@@ -1,5 +1,7 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
 
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards.ChanceCard;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices;
 import lombok.Data;
 import java.util.Queue;
 

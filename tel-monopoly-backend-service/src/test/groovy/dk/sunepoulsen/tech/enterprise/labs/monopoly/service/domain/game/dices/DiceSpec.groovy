@@ -1,5 +1,6 @@
-package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game
+package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices
 
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dice
 import groovy.util.logging.Slf4j
 import spock.lang.Specification
 import spock.lang.Unroll

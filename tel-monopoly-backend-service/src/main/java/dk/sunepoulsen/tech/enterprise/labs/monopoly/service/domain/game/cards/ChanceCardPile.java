@@ -1,4 +1,4 @@
-package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
+package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

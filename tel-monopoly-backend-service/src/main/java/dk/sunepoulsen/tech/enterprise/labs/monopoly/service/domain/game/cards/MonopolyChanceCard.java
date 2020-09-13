@@ -1,5 +1,7 @@
-package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
+package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards;
 
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards.ChanceCard;
 import lombok.Getter;
 
 public class MonopolyChanceCard implements ChanceCard {
