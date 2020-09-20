@@ -36,7 +36,7 @@ public class Player {
      *
      * @return The new amount of this player
      */
-    Double increaseCash(Double amount) {
+    public Double increaseCash(Double amount) {
         if (amount < 0.0) {
             throw new IllegalArgumentException("Amount may not be negative");
         }
@@ -54,7 +54,7 @@ public class Player {
      *
      * @return The new amount of this player
      */
-    Double decreaseCash(Double amount) {
+    public Double decreaseCash(Double amount) {
         if (amount < 0.0) {
             throw new IllegalArgumentException("Amount may not be negative");
         }

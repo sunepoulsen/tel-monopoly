@@ -3,9 +3,6 @@ package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.IncreaseSalaryAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction;
 
-import java.util.Collections;
-import java.util.List;
-
 public class StartField extends AbstractMonopolyField {
 
     public StartField() {
@@ -13,8 +10,8 @@ public class StartField extends AbstractMonopolyField {
     }
 
     @Override
-    public List<MonopolyAction> action() {
-        return Collections.singletonList(passingForwardAction());
+    public MonopolyAction action() {
+        return passingForwardAction();
     }
 
     @Override

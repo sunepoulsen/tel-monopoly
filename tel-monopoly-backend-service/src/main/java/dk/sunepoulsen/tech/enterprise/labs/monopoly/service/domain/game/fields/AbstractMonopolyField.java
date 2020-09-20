@@ -3,10 +3,7 @@ package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.NoAction;
 
-import java.util.Collections;
-import java.util.List;
-
-public class AbstractMonopolyField implements MonopolyField {
+public abstract class AbstractMonopolyField implements MonopolyField {
     private final String id;
     private MonopolyField nextField;
     private MonopolyField previousField;
@@ -36,11 +33,6 @@ public class AbstractMonopolyField implements MonopolyField {
 
     public void setPreviousField(MonopolyField previousField) {
         this.previousField = previousField;
-    }
-
-    @Override
-    public List<MonopolyAction> action() {
-        return Collections.emptyList();
     }
 
     @Override

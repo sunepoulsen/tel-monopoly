@@ -30,7 +30,7 @@ public interface MonopolyField {
      *     be performed.
      * </p>
      */
-    List<MonopolyAction> action();
+    MonopolyAction action();
 
     /**
      * Action to be performed when a player passes this field during a move.

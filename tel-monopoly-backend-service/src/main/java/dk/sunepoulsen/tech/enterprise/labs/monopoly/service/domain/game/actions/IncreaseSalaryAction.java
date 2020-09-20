@@ -1,6 +1,7 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions;
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.DicesResult;
 
 public class IncreaseSalaryAction implements MonopolyAction {
     private final double amount;
@@ -10,7 +11,7 @@ public class IncreaseSalaryAction implements MonopolyAction {
     }
 
     @Override
-    public void performAction(Player player) {
+    public void performAction(Player player, DicesResult dicesResult) {
         player.increaseCash(this.amount);
     }
 

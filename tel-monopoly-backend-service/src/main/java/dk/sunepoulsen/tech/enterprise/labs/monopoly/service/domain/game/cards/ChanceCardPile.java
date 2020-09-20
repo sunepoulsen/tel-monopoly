@@ -44,7 +44,7 @@ public class ChanceCardPile {
      *
      * @return The top card from the pile.
      */
-    ChanceCard drawCard() {
+    public ChanceCard drawCard() {
         ChanceCard card = this.pile.remove();
         this.pile.add(card);
 
