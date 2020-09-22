@@ -8,7 +8,7 @@ class MonopolyGameSpec extends Specification {
 
     void setup() {
         this.game = new MonopolyGame()
-        this.game.configureBoard()
+        this.game.configureGame()
     }
 
     void "Test game configuration"() {

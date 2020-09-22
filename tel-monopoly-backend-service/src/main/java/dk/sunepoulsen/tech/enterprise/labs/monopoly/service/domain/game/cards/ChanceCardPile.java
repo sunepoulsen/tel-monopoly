@@ -20,7 +20,7 @@ public class ChanceCardPile {
         this.cards = new ArrayList<>();
     }
 
-    void addCard(ChanceCard card) {
+    public void addCard(ChanceCard card) {
         this.cards.add(card);
     }
 
