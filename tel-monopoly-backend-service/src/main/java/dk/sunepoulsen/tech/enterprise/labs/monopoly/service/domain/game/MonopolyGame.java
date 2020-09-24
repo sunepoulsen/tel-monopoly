@@ -1,5 +1,6 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
 
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyScholarshipAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MoveBackwardAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MoveBackwardToFieldAction;
@@ -38,6 +39,14 @@ import java.util.concurrent.LinkedBlockingQueue;
 @Data
 public class MonopolyGame {
     /**
+     * Instance factory.
+     * <p>
+     *     See <code>MonopolyInstanceFactory</code> for an explanation of its uses.
+     * </p>
+     */
+    private MonopolyInstanceFactory instanceFactory;
+
+    /**
      * Contains a list of players in the game.
      * <p>
      * The list is sorted by the order that the players are playing at each turn.
@@ -60,7 +69,8 @@ public class MonopolyGame {
      */
     private Dices dices;
 
-    public MonopolyGame() {
+    public MonopolyGame(MonopolyInstanceFactory instanceFactory) {
+        this.instanceFactory = instanceFactory;
         this.players = new LinkedBlockingQueue<>();
         this.chanceCardPile = new ChanceCardPile();
         this.board = new MonopolyBoard();
@@ -70,6 +80,14 @@ public class MonopolyGame {
     public void configureGame() {
         configureChanceCards();
         configureBoard();
+    }
+
+    public void playTurnForNextPlayer() {
+        Turn turn = instanceFactory.newTurnInstance(players.remove(), this.dices);
+        MonopolyAction action = turn.playTurn();
+        action.performAction(turn);
+
+        this.players.add(turn.getPlayer());
     }
 
     private void configureChanceCards() {

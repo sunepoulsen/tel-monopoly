@@ -1,7 +1,7 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions;
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player;
-import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.DicesResult;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Turn;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class ReceiveFromAllPlayersAction implements MonopolyAction {
     }
 
     @Override
-    public void performAction(Player player, DicesResult dicesResult) {
+    public void performAction(Turn turn) {
         throw new UnsupportedOperationException("Not implemented yet!");
     }
 }

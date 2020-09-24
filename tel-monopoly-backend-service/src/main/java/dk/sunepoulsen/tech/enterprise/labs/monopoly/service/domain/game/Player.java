@@ -1,10 +1,14 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 /**
  * A player at a Monopoly game.
  */
+@ToString
+@EqualsAndHashCode
 public class Player {
     /**
      * Name of the player.

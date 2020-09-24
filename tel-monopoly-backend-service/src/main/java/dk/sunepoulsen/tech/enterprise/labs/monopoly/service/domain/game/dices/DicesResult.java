@@ -15,11 +15,11 @@ public class DicesResult {
         this.second = second;
     }
 
-    Integer sum() {
+    public Integer sum() {
         return this.first + this.second;
     }
 
-    boolean isEqual() {
+    public boolean isEqual() {
         return this.first.equals(this.second);
     }
 }
