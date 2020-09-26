@@ -29,8 +29,8 @@ class MonopolyGameSpec extends Specification {
 
     void "Test that a player is back in the queue after an executed turn"() {
         given: 'Game with two players'
-            Player p1 = new Player('player-1', 40000.0)
-            Player p2 = new Player('player-2', 40000.0)
+            Player p1 = new Player('player-1', 40000.0, this.game.board.startField)
+            Player p2 = new Player('player-2', 40000.0, this.game.board.startField)
 
             this.game.players.add(p1)
             this.game.players.add(p2)
