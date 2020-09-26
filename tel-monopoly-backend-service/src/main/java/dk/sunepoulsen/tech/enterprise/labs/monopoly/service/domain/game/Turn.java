@@ -37,4 +37,8 @@ public class Turn {
         this.dicesResult = this.dices.roll();
         return new MoveForwardAction(this.dicesResult.sum());
     }
+
+    boolean playAgain() {
+        return this.dicesResult.isEqual();
+    }
 }

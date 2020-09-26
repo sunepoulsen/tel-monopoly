@@ -84,8 +84,10 @@ public class MonopolyGame {
 
     public void playTurnForNextPlayer() {
         Turn turn = instanceFactory.newTurnInstance(players.remove(), this.dices);
-        MonopolyAction action = turn.playTurn();
-        action.performAction(turn);
+        do {
+            MonopolyAction action = turn.playTurn();
+            action.performAction(turn);
+        } while (turn.playAgain());
 
         this.players.add(turn.getPlayer());
     }
