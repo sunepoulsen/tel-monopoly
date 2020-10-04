@@ -1,6 +1,7 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions;
 
-import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.exceptions.MonopolyActionException;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Turn;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.MonopolyField;
 
@@ -12,7 +13,7 @@ public class MoveForwardAction implements MonopolyAction {
     }
 
     @Override
-    public void performAction(Turn turn) {
+    public void performAction(Turn turn) throws MonopolyActionException {
         Player player = turn.getPlayer();
         MonopolyField field = player.getCurrentField();
 

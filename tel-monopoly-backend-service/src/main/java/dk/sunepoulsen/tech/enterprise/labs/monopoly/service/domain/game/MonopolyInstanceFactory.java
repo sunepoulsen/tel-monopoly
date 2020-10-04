@@ -1,6 +1,7 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player;
 
 /**
  * Instance factory to create new instances of classes that is needed inside methods.

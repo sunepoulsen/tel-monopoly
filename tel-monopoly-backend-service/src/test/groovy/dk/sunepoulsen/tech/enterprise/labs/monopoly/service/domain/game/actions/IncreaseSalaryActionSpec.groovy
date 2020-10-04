@@ -1,10 +1,11 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions
 
-import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Turn
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.DicesResult
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.MonopolyField
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.tests.TestPlayer
 import spock.lang.Specification
 
 class IncreaseSalaryActionSpec extends Specification {
@@ -14,7 +15,7 @@ class IncreaseSalaryActionSpec extends Specification {
 
     void "Tests increase of salary"() {
         given: 'A play with 1.000 in cash'
-            turn = new Turn(new Player('Jennifer', 1000.0, Mock(MonopolyField)), new Dices())
+            turn = new Turn(new TestPlayer('Jennifer', 1000.0, Mock(MonopolyField)), new Dices())
             turn.dicesResult = dicesResult
 
         when: 'Increase the player salary with 200'

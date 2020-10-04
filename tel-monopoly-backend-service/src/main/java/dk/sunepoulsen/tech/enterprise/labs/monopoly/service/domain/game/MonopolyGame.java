@@ -18,6 +18,7 @@ import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards.Ch
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards.MonopolyChanceCard;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.cards.MonopolyPrisonCard;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.exceptions.MonopolyActionException;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.ActionField;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.ChanceField;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.GroundField;
@@ -26,7 +27,9 @@ import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.grounds.
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.grounds.HousingGround;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.grounds.ShippingGround;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.grounds.UtilityGround;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +39,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * Representation of a single instance of a Monopoly game.
  */
+@Slf4j
 @Data
 public class MonopolyGame {
     /**
@@ -82,7 +86,7 @@ public class MonopolyGame {
         configureBoard();
     }
 
-    public void playTurnForNextPlayer() {
+    public void playTurnForNextPlayer() throws MonopolyActionException {
         Turn turn = instanceFactory.newTurnInstance(players.remove(), this.dices);
         do {
             MonopolyAction action = turn.playTurn();

@@ -1,6 +1,6 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.grounds;
 
-import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player;
 import lombok.Data;
 import lombok.Getter;
 

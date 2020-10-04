@@ -1,11 +1,12 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions;
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Turn;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.exceptions.MonopolyActionException;
 
 public class NoAction implements MonopolyAction {
 
     @Override
-    public void performAction(Turn turn) {
+    public void performAction(Turn turn) throws MonopolyActionException {
     }
 
 }

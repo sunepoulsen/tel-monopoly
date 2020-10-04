@@ -1,11 +1,12 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.MonopolyBoard
-import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Player
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.Turn
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.AbstractMonopolyField
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.tests.MonopolyTestField
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.tests.TestPlayer
 import spock.lang.Specification
 
 class MoveForwardActionSpec extends Specification {
@@ -23,7 +24,7 @@ class MoveForwardActionSpec extends Specification {
             fields.each {board.insertField(it) }
 
         and: 'a player that stands on the start field'
-            Player player = new Player('name', 0.0, board.startField)
+            Player player = new TestPlayer('name', 0.0, board.startField)
             Turn turn = new Turn(player, Mock(Dices))
 
         when: 'move the player 3 fields'

@@ -1,5 +1,6 @@
-package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game;
+package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players;
 
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.ChooseActionReason;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.MonopolyField;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public class Player {
+public abstract class Player {
     /**
      * Name of the player.
      */
@@ -40,6 +41,8 @@ public class Player {
         this.cash = cash;
         this.currentField = currentField;
     }
+
+    public abstract ActionChooser createActionChooser(ChooseActionReason reason);
 
     /**
      * Increases the player cash amount with an amount.

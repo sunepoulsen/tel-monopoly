@@ -4,6 +4,7 @@ import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MoveForwardAction;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices;
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.DicesResult;
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player;
 import lombok.Getter;
 
 /**

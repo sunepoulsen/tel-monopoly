@@ -5,6 +5,8 @@ import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.Dices
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.dices.DicesResult
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.fields.MonopolyField
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.tests.TestPlayer
 import spock.lang.Specification
 
 class TurnSpec extends Specification {
@@ -13,7 +15,7 @@ class TurnSpec extends Specification {
 
     void "Play a single turn for a player"() {
         given: 'Given a player'
-            Player player = new Player('Jennifer', 1000.0, Mock(MonopolyField))
+            Player player = new TestPlayer('Jennifer', 1000.0, Mock(MonopolyField))
 
         when: 'execute turn for the player'
             MonopolyAction action = new Turn(player, dices).playTurn()
@@ -26,7 +28,7 @@ class TurnSpec extends Specification {
 
     void "Play a single turn for a player that rolls equal dices"() {
         given: 'Given a player'
-            Player player = new Player('Jennifer', 1000.0, Mock(MonopolyField))
+            Player player = new TestPlayer('Jennifer', 1000.0, Mock(MonopolyField))
             Turn turn = new Turn(player, dices)
 
         when: 'execute turn for the player'

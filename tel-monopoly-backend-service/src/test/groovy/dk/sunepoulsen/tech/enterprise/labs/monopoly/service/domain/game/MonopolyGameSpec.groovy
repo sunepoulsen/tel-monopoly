@@ -1,6 +1,8 @@
 package dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game
 
 import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.actions.MonopolyAction
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.game.players.Player
+import dk.sunepoulsen.tech.enterprise.labs.monopoly.service.domain.tests.TestPlayer
 import spock.lang.Specification
 
 class MonopolyGameSpec extends Specification {
@@ -29,8 +31,8 @@ class MonopolyGameSpec extends Specification {
 
     void "Test that a player is back in the queue after an executed turn"() {
         given: 'Game with two players'
-            Player p1 = new Player('player-1', 40000.0, this.game.board.startField)
-            Player p2 = new Player('player-2', 40000.0, this.game.board.startField)
+            Player p1 = new TestPlayer('player-1', 40000.0, this.game.board.startField)
+            Player p2 = new TestPlayer('player-2', 40000.0, this.game.board.startField)
 
             this.game.players.add(p1)
             this.game.players.add(p2)
@@ -54,8 +56,8 @@ class MonopolyGameSpec extends Specification {
 
     void "Test that a player can repeat its turn"() {
         given: 'Game with two players'
-            Player p1 = new Player('player-1', 40000.0, this.game.board.startField)
-            Player p2 = new Player('player-2', 40000.0, this.game.board.startField)
+            Player p1 = new TestPlayer('player-1', 40000.0, this.game.board.startField)
+            Player p2 = new TestPlayer('player-2', 40000.0, this.game.board.startField)
 
             this.game.players.add(p1)
             this.game.players.add(p2)
